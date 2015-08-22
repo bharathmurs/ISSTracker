@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A158C141B88E85600F620E4 /* spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A158C131B88E85600F620E4 /* spaceship.png */; };
+		3A158C161B88E8C100F620E4 /* ISSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A158C151B88E8C100F620E4 /* ISSService.swift */; };
 		3A8DA5681B88CCCE00EF96AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA5671B88CCCE00EF96AF /* AppDelegate.swift */; };
-		3A8DA56A1B88CCCE00EF96AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA5691B88CCCE00EF96AF /* ViewController.swift */; };
+		3A8DA56A1B88CCCE00EF96AF /* ISSTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA5691B88CCCE00EF96AF /* ISSTrackerViewController.swift */; };
 		3A8DA56D1B88CCCE00EF96AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DA56B1B88CCCE00EF96AF /* Main.storyboard */; };
 		3A8DA56F1B88CCCE00EF96AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DA56E1B88CCCE00EF96AF /* Images.xcassets */; };
 		3A8DA5721B88CCCE00EF96AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DA5701B88CCCE00EF96AF /* LaunchScreen.xib */; };
 		3A8DA57E1B88CCCE00EF96AF /* ISSTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA57D1B88CCCE00EF96AF /* ISSTrackerTests.swift */; };
+		3A8DA5881B88DC9300EF96AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DA5871B88DC9300EF96AF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A158C131B88E85600F620E4 /* spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spaceship.png; path = Resources/spaceship.png; sourceTree = "<group>"; };
+		3A158C151B88E8C100F620E4 /* ISSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSService.swift; sourceTree = "<group>"; };
 		3A8DA5621B88CCCE00EF96AF /* ISSTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISSTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8DA5661B88CCCE00EF96AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DA5671B88CCCE00EF96AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A8DA5691B88CCCE00EF96AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A8DA5691B88CCCE00EF96AF /* ISSTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSTrackerViewController.swift; sourceTree = "<group>"; };
 		3A8DA56C1B88CCCE00EF96AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A8DA56E1B88CCCE00EF96AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A8DA5711B88CCCE00EF96AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3A8DA5771B88CCCE00EF96AF /* ISSTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISSTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8DA57C1B88CCCE00EF96AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A8DA57D1B88CCCE00EF96AF /* ISSTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISSTrackerTests.swift; sourceTree = "<group>"; };
+		3A8DA5871B88DC9300EF96AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8DA5881B88DC9300EF96AF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,10 +63,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A158C121B88E84300F620E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A158C131B88E85600F620E4 /* spaceship.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		3A8DA5591B88CCCE00EF96AF = {
 			isa = PBXGroup;
 			children = (
 				3A8DA5641B88CCCE00EF96AF /* ISSTracker */,
+				3A8DA5891B88DCA100EF96AF /* Frameworks */,
 				3A8DA57A1B88CCCE00EF96AF /* ISSTrackerTests */,
 				3A8DA5631B88CCCE00EF96AF /* Products */,
 			);
@@ -78,10 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				3A8DA5671B88CCCE00EF96AF /* AppDelegate.swift */,
-				3A8DA5691B88CCCE00EF96AF /* ViewController.swift */,
+				3A158C151B88E8C100F620E4 /* ISSService.swift */,
+				3A8DA5691B88CCCE00EF96AF /* ISSTrackerViewController.swift */,
 				3A8DA56B1B88CCCE00EF96AF /* Main.storyboard */,
 				3A8DA56E1B88CCCE00EF96AF /* Images.xcassets */,
 				3A8DA5701B88CCCE00EF96AF /* LaunchScreen.xib */,
+				3A158C121B88E84300F620E4 /* Resources */,
 				3A8DA5651B88CCCE00EF96AF /* Supporting Files */,
 			);
 			path = ISSTracker;
@@ -110,6 +128,14 @@
 				3A8DA57C1B88CCCE00EF96AF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A8DA5891B88DCA100EF96AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A8DA5871B88DC9300EF96AF /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A158C141B88E85600F620E4 /* spaceship.png in Resources */,
 				3A8DA56D1B88CCCE00EF96AF /* Main.storyboard in Resources */,
 				3A8DA5721B88CCCE00EF96AF /* LaunchScreen.xib in Resources */,
 				3A8DA56F1B88CCCE00EF96AF /* Images.xcassets in Resources */,
@@ -212,7 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8DA56A1B88CCCE00EF96AF /* ViewController.swift in Sources */,
+				3A8DA56A1B88CCCE00EF96AF /* ISSTrackerViewController.swift in Sources */,
+				3A158C161B88E8C100F620E4 /* ISSService.swift in Sources */,
 				3A8DA5681B88CCCE00EF96AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +437,7 @@
 				3A8DA5831B88CCCE00EF96AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8DA5841B88CCCE00EF96AF /* Build configuration list for PBXNativeTarget "ISSTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +446,7 @@
 				3A8DA5861B88CCCE00EF96AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,25 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bR6-8I-9lB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="zup-MW-2ON">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <navigationController id="bR6-8I-9lB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gAx-n4-YaZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vID-yE-sGm" kind="relationship" relationship="rootViewController" id="Bft-Pa-mp0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWd-KV-ABX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-298" y="890"/>
+        </scene>
+        <!--ISS Tracker-->
+        <scene sceneID="VEm-cr-8QA">
+            <objects>
+                <viewController id="vID-yE-sGm" customClass="ISSTrackerViewController" customModule="ISSTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BBa-Ju-m8L"/>
+                        <viewControllerLayoutGuide type="bottom" id="SZf-63-2St"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bag-oB-9Lg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-fN-w3P">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nr-lM-sL0">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="refresh" id="F26-7d-KEb">
+                                        <connections>
+                                            <action selector="refreshISSLocation:" destination="vID-yE-sGm" id="z6g-dm-Ihg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Sd1-D8-Hhn"/>
+                                    <barButtonItem title="Auto" style="plain" id="Isg-UD-CMW"/>
+                                    <barButtonItem style="plain" id="vXa-nX-6F6">
+                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="68Z-Wc-4Ec">
+                                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="onTintColor" red="0.39607843139999999" green="0.70196078429999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="autoUpdateToggle:" destination="vID-yE-sGm" eventType="valueChanged" id="bHl-g3-Ofn"/>
+                                            </connections>
+                                        </switch>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vwf-fN-w3P" firstAttribute="bottom" secondItem="SZf-63-2St" secondAttribute="top" id="4nd-fG-Pyr"/>
+                            <constraint firstAttribute="centerX" secondItem="vwf-fN-w3P" secondAttribute="centerX" id="EeT-eA-vNT"/>
+                            <constraint firstItem="6nr-lM-sL0" firstAttribute="leading" secondItem="bag-oB-9Lg" secondAttribute="leadingMargin" constant="-16" id="HMP-He-liZ"/>
+                            <constraint firstAttribute="centerY" secondItem="vwf-fN-w3P" secondAttribute="centerY" id="cJs-Ss-aVR"/>
+                            <constraint firstItem="vwf-fN-w3P" firstAttribute="leading" secondItem="bag-oB-9Lg" secondAttribute="leading" id="hZy-sQ-kOW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6nr-lM-sL0" secondAttribute="trailing" constant="-16" id="oU8-8g-90u"/>
+                            <constraint firstItem="SZf-63-2St" firstAttribute="top" secondItem="6nr-lM-sL0" secondAttribute="bottom" id="suK-Ha-hHV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ISS Tracker" id="77f-Bf-OtE"/>
+                    <connections>
+                        <outlet property="mapView" destination="vwf-fN-w3P" id="qd6-Ka-aOS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfo-LA-cad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="762"/>
         </scene>
     </scenes>
 </document>
